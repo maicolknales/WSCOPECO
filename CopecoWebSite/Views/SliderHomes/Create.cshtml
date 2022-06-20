@@ -1,0 +1,75 @@
+﻿@model CopecoWebSite.Models.SliderHome
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_LayoutAdministration";
+}
+
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Inventario</h3>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Agregar nuevo mobiliario para inventario</h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <a asp-action="Index" class="btn btn-app">
+                                <i class="fa fa-reply"></i> Volver
+                            </a>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <form asp-action="Create" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre<span class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input asp-for="Nombre" class="form-control" type="text" />
+                                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Descripción<span class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input asp-for="Descripcion" class="form-control" type="text" />
+                                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Imagen<span class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input asp-for="Foto" type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+                                    <span asp-validation-for="Foto" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="ln_solid">
+                                <div class="form-group">
+                                    <div class="col-md-6 offset-md-3">
+                                        <button type='submit' value="Create" class="btn btn-primary">Guardar</button>
+                                        <button type='reset' class="btn btn-success">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

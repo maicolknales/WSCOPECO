@@ -1,0 +1,133 @@
+﻿@model CopecoWebSite.Models.Inventario
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_LayoutAdministration";
+}
+
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Inventario</h3>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Eliminar Mobiliario</h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <a asp-action="Index" class="btn btn-app">
+                                <i class="fa fa-reply"></i> Volver
+                            </a>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+                        <div class="col-md-7 col-sm-7 ">
+                            <div class="product-image">
+                                <img src="~/img/default-featured-image.png" alt="..." />
+                            </div>
+                            <div class="product_gallery">
+                                <a>
+                                    <img src="~/img/default-featured-image.png" alt="..." />
+                                </a>
+                                <a>
+                                    <img src="~/img/default-featured-image.png" alt="..." />
+                                </a>
+                                <a>
+                                    <img src="~/img/default-featured-image.png" alt="..." />
+                                </a>
+                                <a>
+                                    <img src="~/img/default-featured-image.png" alt="..." />
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-sm-5 " style="border:0px solid #e5e5e5;">
+
+                            <h3 class="prod_title">@Html.DisplayFor(model => model.Nombre)</h3>
+
+                            <p>@Html.DisplayFor(model => model.Descripcion).</p>
+                            <div class="col-md-5 col-sm-5 " style="border:0px solid #e5e5e5;">
+                                <div class="">
+                                    <h2> Marca</h2>
+                                    <ul class="list-inline prod_size display-layout">
+                                        <li>
+                                            <button type="button" class="btn btn-default btn-xs">@Html.DisplayFor(model => model.Marca)</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="">
+                                    <h2> Serie</h2>
+                                    <ul class="list-inline prod_size display-layout">
+                                        <li>
+                                            <button type="button" class="btn btn-default btn-xs">@Html.DisplayFor(model => model.Serie)</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="">
+                                    <h2> Color</h2>
+                                    <ul class="list-inline prod_size display-layout">
+                                        <li>
+                                            <button type="button" class="btn btn-default btn-xs">@Html.DisplayFor(model => model.Color)</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="">
+                                    <h2> Fecha de adquisición</h2>
+                                    <ul class="list-inline prod_size display-layout">
+                                        <li>
+                                            <button type="button" class="btn btn-default btn-xs">@Html.DisplayFor(model => model.FechaAdquisicion)</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 " style="border:0px solid #e5e5e5;">
+                                <div class="">
+                                    <h2> Modelo</h2>
+                                    <ul class="list-inline prod_size display-layout">
+                                        <li>
+                                            <button type="button" class="btn btn-default btn-xs">@Html.DisplayFor(model => model.Modelo)</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="">
+                                    <h2> Placa</h2>
+                                    <ul class="list-inline prod_size display-layout">
+                                        <li>
+                                            <button type="button" class="btn btn-default btn-xs">@Html.DisplayFor(model => model.Placa)</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="">
+                                    <h2> Valor</h2>
+                                    <ul class="list-inline prod_size display-layout">
+                                        <li>
+                                            <button type="button" class="btn btn-default btn-xs">@Html.DisplayFor(model => model.Valor)</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="">
+                                    <h2></h2>
+                                    <ul class="list-inline prod_size display-layout">
+                                        <li>
+                                            <form asp-action="Delete">
+                                                <input type="hidden" asp-for="Id" />
+                                                <button type='submit' value="Delete" class="btn btn-danger">Eliminar</button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

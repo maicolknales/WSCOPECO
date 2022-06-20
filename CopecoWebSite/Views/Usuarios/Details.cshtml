@@ -1,0 +1,74 @@
+﻿@model CopecoWebSite.Models.Usuario
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_LayoutAdministration";
+}
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Usuarios</h3>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-8 col-sm-8 ">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Perfil de usuario</h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <a asp-action="Index" class="btn btn-app">
+                                <i class="fa fa-reply"></i> Volver
+                            </a>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="col-md-3 col-sm-3  profile_left">
+                            <div class="profile_img">
+                                <div id="crop-avatar">
+                                    <!-- Current avatar -->
+                                    <img class="img-responsive avatar-view" src="/img/user.png" alt="Avatar" title="Change the avatar">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-7 col-sm-7 ">
+
+                            <div style="text-align:start">
+                                <h3><b>@Html.DisplayFor(model => model.NombreUsuario)</b></h3>
+
+                                <ul class="list-unstyled user_data">
+                                    <li>
+                                        <h3><small><i class="fa fa-user user-profile-icon"></i><b>Usuario: </b> @Html.DisplayFor(model => model.UsuarioCorreo)</small></h3>                                         
+                                    </li>
+                                    <li>
+                                        <h3><small><i class="fa fa-unlock-alt user-profile-icon"></i> <b>Contraseña: </b>@Html.DisplayFor(model => model.Contraseña)</small></h3>
+                                         
+                                    </li>
+                                    <li>
+                                        <h3><small><i class="fa fa-group user-profile-icon"></i> <b>Tipo de rol: </b> @Html.DisplayFor(model => model.Rol.Nombre )</small></h3>
+                                        
+                                    </li>
+                                    <li>
+                                        <h3><small><i class="fa fa-tags user-profile-icon"></i> <b>Fecha de creación: </b> @Html.DisplayFor(model => model.FechaCreacion)</small></h3>                                        
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary"><i class="fa fa-edit m-right-xs"></i>Editar</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page content -->
+

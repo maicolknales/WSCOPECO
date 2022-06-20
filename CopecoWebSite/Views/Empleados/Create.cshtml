@@ -1,0 +1,126 @@
+﻿@model CopecoWebSite.Models.Empleados
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_LayoutAdministration";
+}
+
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Empleados</h3>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Agregar nuevo empleado</h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <a asp-action="Index" class="btn btn-app">
+                                <i class="fa fa-reply"></i> Volver
+                            </a>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre<span class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input asp-for="Nombre" class="form-control" type="text" />
+                                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Apellido<span class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input asp-for="Apellido" class="form-control" type="text" />
+                                    <span asp-validation-for="Apellido" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Numero de identidad<span class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input asp-for="Identidad" class="form-control" type="text" />
+                                    <span asp-validation-for="Identidad" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                    Fecha de Fecha de nacimiento* <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input asp-for="FechaNacimiento" id="birthday" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" required="required" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
+                                    <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                                    <script>
+                                        function timeFunctionLong(input) {
+                                            setTimeout(function() {
+                                                input.type = 'text';
+                                            }, 60000);
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                    Fecha de ingreso* <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input asp-for="FechaIngreso" id="birthday" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" required="required" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
+                                    <span asp-validation-for="FechaIngreso" class="text-danger"></span>
+                                    <script>
+                                        function timeFunctionLong(input) {
+                                            setTimeout(function() {
+                                                input.type = 'text';
+                                            }, 60000);
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Domicilio<span class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input asp-for="Domicilio" class="form-control" type="text" />
+                                    <span asp-validation-for="Domicilio" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Serie<span class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input asp-for="Telefono" class="form-control" type="tel" />
+                                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="field item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3  label-align">Cargo<span class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input asp-for="Cargo" class="form-control" type="text" />
+                                    <span asp-validation-for="Cargo" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="ln_solid">
+                                <div class="form-group">
+                                    <div class="col-md-6 offset-md-3">
+                                        <button type='submit' value="Create" class="btn btn-primary">Guardar</button>
+                                        <button type='reset' class="btn btn-success">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}
